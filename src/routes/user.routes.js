@@ -8,11 +8,11 @@ router.route("/register").post(
     //file handling - to upload files 
     upload.fields([
         {
-            name: avatar,
+            name: "avatar",
             maxCount: 1,
         },
         {
-            name: coverImage,
+            name: "coverImage",
             maxCount: 1,
         }
     ]),
