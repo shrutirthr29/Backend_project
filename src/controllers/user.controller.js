@@ -135,7 +135,7 @@ const loginUser=asyncHandler(async(req,res)=>{
     // 5. access and refresh token
     const {accessToken, refreshToken} = await generateAccessAndRefreshTokens(user._id)
 
-    const loggedInUser = await User.findById(user._id).select("-password - refreshToken")
+    const loggedInUser = await User.findById(user._id).select("-password -refreshToken")
 
     // 6. send cookie
     //when we do httpOnly and secure true then the cookies are only modifiable from the server, we cannot modify it from frontend
